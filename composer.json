@@ -15,6 +15,7 @@
         "livewire/livewire": "^3.3",
         "livewire/volt": "^1.0",
         "maize-tech/laravel-markable": "^2.1",
+        "pusher/pusher-php-server": "^7.2",
         "socialiteproviders/discord": "^4.2"
     },
     "require-dev": {
