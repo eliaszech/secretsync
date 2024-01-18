@@ -40,7 +40,7 @@ new #[Layout('layouts.app')] class extends \Livewire\Volt\Component {
 
             $this->addError('send-message', "Zu viele Nachrichten in einer kurzen Zeit, bitte warte $seconds Sekunden!");
         } else {
-            broadcast(new MessageReceived($this->type))->toOthers();
+            broadcast(new MessageReceived($this->type));
         }
     }
 
