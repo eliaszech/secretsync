@@ -37,7 +37,7 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER', 'mt1'),
                 'encrypted' => false,
-                'host' => '5.230.43.197',
+                'host' => 'forum.secretsync.xyz',
                 'port' => 6001,
                 'scheme' => 'http',
             ],
