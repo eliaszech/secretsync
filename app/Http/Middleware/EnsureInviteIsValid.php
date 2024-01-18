@@ -17,7 +17,7 @@ class EnsureInviteIsValid
     {
         $invite = $request->user()->invite()->first();
 
-        if(!$invite || !$invite->valid) {
+        if((!$invite || !$invite->valid) && $request->user()->role != 'admin') {
             return redirect('invite');
         }
 
