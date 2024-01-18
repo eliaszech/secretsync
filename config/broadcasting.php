@@ -31,11 +31,11 @@ return [
     'connections' => [
         'pusher' => [
             'driver' => 'pusher',
-            'key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
-            'app_id' => env('PUSHER_APP_ID'),
+            'key' => env('PUSHER_APP_KEY', 'dev'),
+            'secret' => env('PUSHER_APP_SECRET', 'dev'),
+            'app_id' => env('PUSHER_APP_ID', 'dev'),
             'options' => [
-                'cluster' => env('PUSHER_APP_CLUSTER'),
+                'cluster' => env('PUSHER_APP_CLUSTER', 'mt1'),
                 'encrypted' => true,
                 'host' => '127.0.0.1',
                 'port' => 6001,
