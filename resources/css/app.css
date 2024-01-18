@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    [x-cloak] { display: none !important; }
+}
+
+body .tox-tinymce {
+    @apply border-2 border-primary-accent/30 shadow;
+
+    & .tox-editor-container {
+        & .tox-editor-header {
+            @apply bg-primary/10;
+            & .tox-menubar {
+                @apply bg-transparent;
+                & .tox-mbtn {
+                    @apply text-white;
+
+                    &:hover {
+                        @apply bg-primary/30;
+                    }
+
+                    &.tox-mbtn--active {
+                        @apply bg-primary/30;
+                    }
+                }
+            }
+
+            & .tox-toolbar-overlord {
+                @apply bg-transparent border-none;
+                & .tox-toolbar__primary {
+                    @apply bg-transparent bg-none;
+                    & .tox-toolbar__group {
+                        @apply border-primary-accent/20;
+                        & .tox-tbtn {
+                            @apply text-white;
+
+                            &.tox-tbtn--disabled {
+                                & svg {
+                                    @apply fill-gray-400;
+                                }
+
+                                &:hover {
+                                    @apply bg-transparent;
+                                }
+                            }
+
+                            &.tox-tbtn--select {
+                                @apply bg-primary/20;
+                            }
+
+                            &:hover {
+                                @apply bg-primary/30;
+                            }
+
+                            & svg {
+                                @apply fill-white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .tox-anchorbar {
+                @apply bg-transparent;
+            }
+        }
+
+        & .tox-edit-area {
+            & .tox-edit-area__iframe {
+                @apply bg-background;
+            }
+        }
+    }
+
+    & .tox-statusbar {
+        @apply bg-primary/10 border-none;
+        & .tox-statusbar__text-container {
+            & .tox-statusbar__path {
+                & .tox-statusbar__path-item {
+                    @apply text-gray-300;
+                }
+            }
+        }
+
+        & .tox-statusbar__right-container {
+            & .tox-statusbar__branding {
+                & a svg {
+                    @apply fill-gray-300 mt-1;
+                }
+
+                & a:hover {
+                    & svg {
+                        @apply fill-primary-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body .tox {
+    & .tox-menu {
+        @apply bg-primary/20 backdrop-blur-lg;
+
+        & .tox-collection__group {
+            @apply border-primary-accent/20;
+            & .tox-collection__item {
+                @apply text-white;
+
+                &:hover {
+                    @apply bg-primary/30;
+                }
+
+                &.tox-collection__item--active {
+                    @apply bg-primary/40;
+
+                    & .tox-collection__item-label {
+                        @apply font-bold;
+                    }
+                }
+
+                &.tox-collection__item--enabled {
+                    @apply bg-primary/40;
+                }
+
+                & .tox-collection__item-label {
+                    & p {
+                        @apply bg-transparent !important;
+                    }
+                }
+
+                & .tox-collection__item-caret {
+                    & svg {
+                        @apply fill-gray-400;
+                    }
+                }
+
+                & .tox-collection__item-accessory {
+                    @apply text-gray-400;
+                }
+            }
+
+            & .tox-fancymenuitem {
+                & .tox-insert-table-picker {
+                    & div {
+                        @apply border-primary-accent/60;
+
+                        &.tox-insert-table-picker__selected {
+                            @apply bg-primary-accent/30;
+                        }
+                    }
+
+                    & .tox-insert-table-picker__label {
+                        @apply text-gray-300;
+                    }
+                }
+            }
+        }
+    }
+
+    & .tox-pop {
+        &::before {
+            @apply border-b-primary/20 !important;
+        }
+        &::after {
+            @apply border-none border-transparent !important;
+        }
+        & .tox-pop__dialog {
+            @apply bg-primary/20 border-none shadow backdrop-blur-lg;
+            & .tox-toolbar {
+                & .tox-toolbar__group {
+                    & .tox-tbtn {
+                        &:hover {
+                            @apply bg-primary/30;
+                        }
+                        & .tox-icon svg {
+                            @apply fill-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .tox-dialog-wrap {
+        & .tox-dialog-wrap__backdrop {
+            @apply bg-background/30;
+        }
+
+        & .tox-dialog {
+            @apply bg-primary/20 backdrop-blur-lg shadow border-2 border-primary-accent/40;
+
+            & .tox-dialog__header {
+                @apply bg-transparent text-white;
+
+                & .tox-button {
+                    &:hover {
+                        @apply bg-primary/20;
+                    }
+
+                    & .tox-icon {
+                        svg {
+                            @apply fill-white;
+                        }
+                    }
+                }
+            }
+
+            & .tox-dialog__content-js {
+                & .tox-dialog__body {
+                    & .tox-dialog__body-nav {
+                        & .tox-dialog__body-nav-item {
+                            @apply text-white w-full;
+
+                            &.tox-dialog__body-nav-item--active {
+                                @apply bg-primary-accent/30 px-0.5 py-1 border-primary/40;
+                            }
+                        }
+                    }
+
+                    & .tox-dialog__body-content {
+                        & .tox-form {
+                            & .tox-form__group {
+                                & .tox-label {
+                                    @apply text-white;
+                                }
+
+                                & .tox-textfield {
+                                    @apply bg-primary-accent/20 border-none text-white;
+
+                                    &:focus {
+                                        @apply border-none ring-0 shadow-md shadow-primary-accent/60;
+                                    }
+                                }
+
+                                & .tox-checkbox {
+                                    & .tox-checkbox__input:focus+.tox-checkbox__icons {
+                                        @apply shadow-none;
+                                    }
+
+                                    & .tox-checkbox__icons {
+                                        & .tox-icon {
+                                            svg {
+                                                @apply fill-white;
+                                            }
+                                        }
+                                    }
+
+                                    & .tox-checkbox__label {
+                                        @apply text-white text-sm mt-4;
+                                    }
+                                }
+
+                                & .tox-listboxfield {
+                                    & .tox-listbox {
+                                        @apply bg-primary-accent/20 text-white border-none;
+
+                                        & .tox-listbox__select-chevron {
+                                            svg {
+                                                @apply fill-white;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                & .tox-color-input {
+                                    & span::before {
+                                        @apply border-primary-accent/60;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .tox-dialog__footer {
+                @apply bg-transparent;
+
+                & .tox-button {
+                    @apply bg-primary text-white border-none shadow;
+
+                    &.tox-button--secondary {
+                        @apply bg-white/10 text-white border-none shadow;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+code {
+    @apply bg-primary/30 px-2 py-0.5 !important;
+}
+
+hr {
+    @apply border-primary/40;
+}
+table {
+    @apply border-primary/40;
+    & tbody {
+        & thead tr th {
+            @apply font-bold;
+        }
+
+        & tr, & td {
+            @apply border border-primary/40;
+        }
+
+        & td {
+            @apply px-2 py-1;
+        }
+    }
+}
+
+
+* {
+    transition: background-color ease-in-out 500ms;
+}
