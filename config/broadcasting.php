@@ -37,13 +37,14 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER', 'mt1'),
                 'encrypted' => true,
-                'host' => '127.0.0.1',
+                'host' => '5.230.43.197',
                 'port' => 6001,
-                'scheme' => 'http'
+                'scheme' => 'http',
             ],
-            'client_options' => [
-                // Guzzle client options: https://docs.guzzlephp.org/en/stable/request-options.html
-            ],
+            'curl_options' => [
+                CURLOPT_SSL_VERIFYHOST => 0,
+                CURLOPT_SSL_VERIFYPEER => 0,
+            ]
         ],
 
         'ably' => [
