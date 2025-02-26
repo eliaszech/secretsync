@@ -16,7 +16,7 @@ use Livewire\Volt\Volt;
 
 
 
-Route::middleware(['auth', 'invited', 'verified'])->group(function() {
+Route::middleware(['auth', 'verified'])->group(function() {
     Volt::route('/', 'pages.dashboard')->name('dashboard');
 
     Volt::route('/posts/create', 'pages.posts.post-create')->name('post.create');
@@ -26,11 +26,6 @@ Route::middleware(['auth', 'invited', 'verified'])->group(function() {
     Volt::route('/shoutbox/{type}', 'pages.shoutbox')->name('shoutbox');
 
     Route::view('profile', 'profile')->name('profile');
-});
-
-Route::middleware(['auth'])->group(function() {
-    Volt::route('invite', 'pages.auth.invite-checker')
-        ->name('invite');
 });
 
 require __DIR__.'/auth.php';
