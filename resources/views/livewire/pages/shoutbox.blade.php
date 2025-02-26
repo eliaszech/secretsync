@@ -40,7 +40,7 @@ new #[Layout('layouts.app')] class extends \Livewire\Volt\Component {
 
             $this->addError('send-message', "Zu viele Nachrichten in einer kurzen Zeit, bitte warte $seconds Sekunden!");
         } else {
-            broadcast(new MessageReceived($this->type));
+            //broadcast(new MessageReceived($this->type));
         }
     }
 
@@ -56,11 +56,11 @@ new #[Layout('layouts.app')] class extends \Livewire\Volt\Component {
         }
     }
 
-    public function getListeners(): array {
+    /*public function getListeners(): array {
         return [
             "echo-presence:chat.$this->type,MessageReceived" => '$refresh'
         ];
-    }
+    }*/
 }
 
 ?>

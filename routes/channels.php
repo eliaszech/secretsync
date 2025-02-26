@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('chat.{channel}', function (\App\Models\User $user, string $channel) {
+/*Broadcast::channel('chat.{channel}', function (\App\Models\User $user, string $channel) {
     return ['id' => $user->id, 'name' => $user->name];
-});
+});*/
